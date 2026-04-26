@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>专注力数字训练</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="play-area" aria-label="数字训练区">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">专注力数字训练</p>
+            <h1>从大到小读数字</h1>
+          </div>
+        </header>
+
+        <div class="difficulty-bar" aria-label="难度选择">
+          <button class="difficulty-button is-active" data-level="warmup" type="button">
+            <span>暖身</span>
+            <small>4个个位数</small>
+          </button>
+          <button class="difficulty-button" data-level="focus" type="button">
+            <span>专注</span>
+            <small>6个两位数</small>
+          </button>
+          <button class="difficulty-button" data-level="lightning" type="button">
+            <span>闪电</span>
+            <small>8个两位数</small>
+          </button>
+        </div>
+
+        <div class="prompt">
+          <span>忽略数字的大小，只比较数字本身。</span>
+          <strong id="answerPreview">当前是暖身局，完成后显示答案</strong>
+        </div>
+
+        <div class="numbers" id="numberBoard" aria-live="polite"></div>
+
+        <footer class="controls">
+          <div class="timer-card">
+            <span>本局用时</span>
+            <strong id="timer">0.00 秒</strong>
+          </div>
+          <button class="action-button" id="actionButton" type="button">开始第一局</button>
+        </footer>
+      </section>
+
+      <aside class="side-panel" aria-label="训练记录">
+        <div class="panel-block">
+          <span class="label">局数</span>
+          <strong id="roundCount">0</strong>
+        </div>
+        <div class="panel-block">
+          <span class="label">最近成绩</span>
+          <ol id="historyList" class="history-list"></ol>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
